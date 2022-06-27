@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/outdoor-portfolio/static/css/main.eb2f8e70.css",
+    "main.js": "/outdoor-portfolio/static/js/main.29bf01e4.js",
+    "index.html": "/outdoor-portfolio/index.html",
+    "main.eb2f8e70.css.map": "/outdoor-portfolio/static/css/main.eb2f8e70.css.map",
+    "main.29bf01e4.js.map": "/outdoor-portfolio/static/js/main.29bf01e4.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.eb2f8e70.css",
+    "static/js/main.29bf01e4.js"
+  ]
+}
