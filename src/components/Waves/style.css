@@ -1,0 +1,28 @@
+#clouds {
+  padding: 20px;
+  filter: url("#wreckit");
+  animation: wavemover 10s infinite alternate linear;
+  font-family: "Rubik Mono One", sans-serif;
+}
+
+h1,
+h2 {
+  color: #6dd2fd;
+  user-select: none;
+}
+
+h1 {
+  font-size: 8vmax;
+  margin: 0;
+}
+
+h2 {
+  font-size: 4vmax;
+}
+
+@keyframes wavemover {
+  100% {
+    padding-left: 200px;
+    transform: translateX(-100px);
+  }
+}

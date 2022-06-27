@@ -1,0 +1,128 @@
+.fire {
+  position: relative;
+  /* width: calc(25vw / 4);
+  height: calc(20vw / 4); */
+  height: 100px;
+  width: 120px;
+  top: 0px;
+  display: flex;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 11;
+}
+.fire.log-fall .log-front {
+  animation: log-fall 0.4s 0s forwards;
+}
+.fire.log-fall .flame {
+  display: none;
+}
+.fire .log {
+  position: absolute;
+  width: 80%;
+  height: 20%;
+  box-shadow: 2px 2px rgba(0, 0, 0, 0.2);
+}
+.fire .log-front {
+  transform: rotate(15deg);
+  bottom: 15%;
+  background-color: sienna;
+  z-index: 3;
+}
+.fire .log-rear {
+  transform: rotate(-10deg);
+  bottom: 10%;
+  background-color: saddlebrown;
+  z-index: 1;
+}
+.fire .log-bottom {
+  bottom: 0;
+  background-color: rosybrown;
+  z-index: 2;
+}
+.fire .flame {
+  position: absolute;
+  height: 40%;
+  width: 40%;
+  opacity: 0.75;
+  z-index: 0;
+  transform: rotate(45deg);
+  animation: flame 2s 0s infinite forwards alternate;
+}
+.fire .flame-outer {
+  background: radial-gradient(orangered 50%, transparent 100%);
+  border-radius: 0 50% 50% 50%;
+  bottom: 20%;
+  left: 30%;
+  right: 30%;
+}
+.fire .flame-outer:before {
+  content: "";
+  position: absolute;
+  background: radial-gradient(orange 50%, transparent 100%);
+  width: 60%;
+  height: 60%;
+  z-index: 5;
+  bottom: 10%;
+  border-radius: 0 50% 50% 50%;
+  left: 30%;
+  right: 30%;
+}
+.fire .smoke {
+  position: absolute;
+  left: 45%;
+  top: 70%;
+  background-color: rgba(55, 55, 55, 0.1);
+  width: 25%;
+  height: 10%;
+  animation: smoke 5s 4s infinite forwards;
+  z-index: 2;
+  border-radius: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: transparent;
+}
+.fire .smoke-2 {
+  animation-delay: 0s;
+  left: 18%;
+}
+.fire .smoke-3 {
+  left: 35%;
+  animation-delay: 2s;
+}
+
+@keyframes flame {
+  0% {
+    opacity: 0.75;
+    height: 40%;
+    width: 40%;
+  }
+  50% {
+    opacity: 0.7;
+  }
+  100% {
+    opacity: 0.75;
+    height: 42%;
+    width: 42%;
+  }
+}
+
+@keyframes smoke {
+  from {
+    top: 70%;
+  }
+  to {
+    top: 0%;
+  }
+}
+
+@keyframes log-fall {
+  from {
+    transform: rotate(15deg);
+    bottom: 15%;
+  }
+  to {
+    transform: rotate(0);
+    bottom: 0;
+  }
+}

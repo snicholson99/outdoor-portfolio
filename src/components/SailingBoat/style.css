@@ -1,0 +1,118 @@
+#sailing-boat {
+  width: 75px;
+  height: 50px;
+  position: absolute;
+  top: -47.5px;
+  animation: sail 15s infinite linear;
+}
+
+#sailing-boat #hull {
+  right: 0;
+  width: 80%;
+  border-top: 7.5px solid white;
+  border-left: 2px solid transparent;
+  border-right: 8px solid transparent;
+  height: 0;
+  position: absolute;
+  bottom: 0;
+  z-index: 2;
+}
+
+#sailing-boat #mast {
+  position: absolute;
+  left: 42%;
+  width: 5%;
+  height: 100%;
+  background-color: grey;
+  z-index: 1;
+  border-top-left-radius: 2px;
+  border-top-right-radius: 2px;
+}
+
+#sailing-boat #main-sail {
+  position: absolute;
+  right: 0;
+  width: 0;
+  height: 0;
+  border-bottom: 35px solid yellow;
+  border-right: 40px solid transparent;
+}
+
+#sailing-boat #jib-sail {
+  position: absolute;
+  top: 8px;
+  left: 15px;
+  width: 0;
+  height: 0;
+  border-bottom: 33px solid yellow;
+  border-left: 20px solid transparent;
+}
+
+#sailing-boat #spinnaker-sail {
+  width: 40px;
+  height: 24px;
+  border-radius: 50%;
+  box-shadow: 5px 5px 0 0 purple;
+  transform: rotate(140deg);
+  z-index: 20;
+  position: absolute;
+  left: 0px;
+  top: 17px;
+  animation: sailFlap 1s forwards infinite alternate ease-in-out,
+    dropSail 15s forwards infinite ease-in-out;
+}
+
+@media only screen and (max-width: 600px) {
+  #sailing-boat {
+    animation: sail 12s infinite linear;
+  }
+  #sailing-boat #spinnaker-sail {
+    animation: sailFlap 1s forwards infinite alternate ease-in-out,
+      dropSail 12s forwards infinite ease-in-out;
+  }
+}
+
+@keyframes sailFlap {
+  from {
+    height: 24px;
+  }
+  to {
+    height: 28px;
+  }
+}
+
+@keyframes sail {
+  0% {
+    transform: translateX(30vw) rotateY(0deg);
+  }
+  40% {
+    transform: translateX(-30vw) rotateY(0deg);
+  }
+  50% {
+    transform: translateX(-30vw) rotateY(180deg);
+  }
+  90% {
+    transform: translateX(30vw) rotateY(180deg);
+  }
+  100% {
+    transform: translateX(30vw) rotateY(0deg);
+  }
+}
+
+@keyframes dropSail {
+  0% {
+    width: 40px;
+  }
+  30% {
+    width: 40px;
+  }
+  38% {
+    width: 0;
+  }
+  98% {
+    width: 0;
+  }
+  100% {
+    width: 40px;
+  }
+}
